@@ -1,6 +1,7 @@
 .navbar {
   position: relative;
   z-index: 1000;
+  max-width: 1140px;
 }
 
 .navbar-collapse {
@@ -27,4 +28,8 @@
 
 .nav-item {
   padding: 10px;
+}
+.nav {
+  display: flex;
+  justify-content: center;
 }
