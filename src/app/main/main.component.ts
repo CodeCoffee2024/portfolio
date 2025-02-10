@@ -91,19 +91,19 @@ export class MainComponent implements AfterViewInit, OnInit {
     {
       title1: "Capstone Title",
       title2: "Generator",
-      image: '/assets/capstone.png',
+      image: '/assets/capstone.webp',
       description: "This project aims to help students who struggle to come up with capstone title in the subject matter using AI as a tool in creating suggestion."
     },
     {
       title1: "Admin",
       title2: "Dashboard",
-      image: '/assets/admin-dashboard.png',
+      image: '/assets/admin-dashboard.webp',
       description: "This project aims to showcase different UI approach combined with different tools used in UI as well as combination of colors and UX."
     },
     {
       title1: "Weather",
       title2: "Dashboard",
-      image: '/assets/weather-dashboard.png',
+      image: '/assets/weather-dashboard.webp',
       description: "This project showcases my skills in UI design, sprite images, and data visualization using weather API making it an excellent addition to my developer's portfolio."
     }
   ]
