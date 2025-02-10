@@ -179,6 +179,9 @@ export class AppComponent implements AfterViewInit, OnInit {
     return { animation, style };
   }
   startScrolling() {
+    if (!this.imageContainer) {
+      return;
+    }
     const container = this.imageContainer.nativeElement;
 
     setInterval(() => {

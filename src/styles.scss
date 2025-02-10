@@ -3,7 +3,7 @@
   --color-main-hover : rgba(40,37,30,.7);
   --primary-color-1 : #9cc054;
   --primary-color-2 : #3d8844;
-  --fade-color: #5b655d;
+  --fade-color: #839c88;
 }
 
 .color-main {
@@ -44,6 +44,11 @@ body, html {
 }
 .font-lg {
   font-size: 50px;
+}
+@media (max-width: 425px) { // Applies for tablets and mobile screens
+  .font-lg {
+    font-size: 40px;
+  }
 }
 .font-md {
   font-size: 30px;
