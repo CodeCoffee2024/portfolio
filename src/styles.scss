@@ -4,6 +4,7 @@
   --color-main-hover : rgba(40,37,30,.7);
   --primary-color-1 : #9cc054;
   --primary-color-2 : #3d8844;
+  --fade-color: #5b655d;
 }
 
 .color-main {
@@ -20,7 +21,7 @@
   cursor: pointer;
 }
 .fade-30 {
-  opacity: .3;
+  color: var(--fade-color);
 }
 .fade-80 {
   opacity: .8;
