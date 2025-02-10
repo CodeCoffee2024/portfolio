@@ -1,0 +1,30 @@
+.navbar {
+  position: relative;
+  z-index: 1000;
+}
+
+.navbar-collapse {
+  background: white;
+  border-radius: 5px;
+  padding: 10px;
+
+  @media (max-width: 991px) { // Applies for tablets and mobile screens
+    position: absolute;
+    top: 100%; // Floats right below the navbar
+    right: 0;
+    left: auto;
+    width: 100%;
+  }
+}
+
+.navbar-nav {
+  flex-direction: column; // Stack items vertically on smaller screens
+
+  @media (min-width: 992px) { // Applies for desktop screens
+    flex-direction: row; // Aligns items horizontally in desktop view
+  }
+}
+
+.nav-item {
+  padding: 10px;
+}

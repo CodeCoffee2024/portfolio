@@ -1,1 +1,78 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+  --color-main : #28251e;
+  --color-main-hover : rgba(40,37,30,.7);
+  --primary-color-1 : #9cc054;
+  --primary-color-2 : #3d8844;
+}
+
+.color-main {
+  color: var(--color-main);
+}
+.color-primary-1 {
+  color: var(--primary-color-1);
+}
+.color-primary-2 {
+  color: var(--primary-color-2);
+}
+.highlight:hover {
+  color: var(--primary-color-2);
+  cursor: pointer;
+}
+.fade-30 {
+  opacity: .3;
+}
+.fade-80 {
+  opacity: .8;
+}
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #142218 !important;
+  font-family: "Poppins", serif !important;
+}
+.text-extrabold {
+  font-family: "Poppins", serif;
+  font-weight: 800;
+  font-style: normal;
+}
+.text-bigblack {
+  font-family: "Poppins", serif;
+  font-weight: 900;
+  font-style: normal;
+}
+.font-lg {
+  font-size: 50px;
+}
+.font-md {
+  font-size: 30px;
+}
+.font-sm {
+  font-size: 20px;
+}
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; // Prevent icons from blocking user interaction
+  z-index: 0;
+  overflow: hidden;
+}
+
+.floating-icon {
+  position: absolute;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.5);
+  animation-iteration-count: infinite;
+  will-change: transform;
+}
+
+.stack-container {
+  flex-wrap: wrap;
+}
+.bg-none {
+  background: none !important;
+}
