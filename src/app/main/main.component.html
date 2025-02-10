@@ -1,15 +1,15 @@
 <app-topbar></app-topbar>
-<div class="background">
-<i *ngFor="let icon of floatingIcons" [class]="'bi ' + icon.icon" class="floating-icon" [ngStyle]="icon.style"></i>
-</div>
+<main class="background">
+  <i *ngFor="let icon of floatingIcons" [class]="'bi ' + icon.icon" class="floating-icon" [ngStyle]="icon.style" aria-hidden="true"></i>
+</main>
+
 <div class="container">
   <div class="row p-3">
     <!-- Sticky Profile Section -->
-    <div class="col-12 col-lg-4 rounded bg-white h-100 shadow p-3 sticky-lg">
+    <aside class="col-12 col-lg-4 rounded bg-white h-100 shadow p-3 sticky-lg">
       <div class="row">
         <div class="col-12 col-md-6 col-lg-12">
-
-          <img src="/assets/picture-pogi.webp" width="100%" height="100%" fetchpriority="high">
+          <img src="/assets/picture-pogi.webp" width="100%" height="100%" fetchpriority="high" alt="Profile picture of Code Coffee">
         </div>
         <div class="col-12 col-md-6 col-lg-12 d-flex justify-content-center flex-column">
           <h1 class="text-extrabold text-center mb-0">
@@ -18,151 +18,82 @@
             <span class="color-primary-2">Coffee</span>
           </h1>
           <p class="text-center mb-0 mt-3">Transforming age-old traditions into innovative digital solutions.</p>
-          <div class="d-flex mt-2 mb-2 justify-content-center align-items-center">
-            <a href="https://github.com/CodeCoffee2024" class="highlight color-main" target="_blank">
-              <i class="bi bi-github highlight p-3 font-sm"></i>
+          <nav class="d-flex mt-2 mb-2 justify-content-center align-items-center" aria-label="Social Media Links">
+            <a href="https://github.com/CodeCoffee2024" class="highlight color-main" target="_blank" aria-label="GitHub Profile">
+              <i class="bi bi-github highlight p-3 font-sm" aria-hidden="true"></i>
             </a>
-
-            <a href="mailto:code.coffee.2024@gmail.com" class="highlight color-main" >
-              <i class="bi bi-envelope highlight font-sm"></i>
+            <a href="mailto:code.coffee.2024@gmail.com" class="highlight color-main" aria-label="Email Code Coffee">
+              <i class="bi bi-envelope highlight font-sm" aria-hidden="true"></i>
             </a>
-          </div>
+          </nav>
         </div>
       </div>
-    </div>
+    </aside>
 
     <!-- Right Content Section -->
-    <div class="col-lg-8 pl-lg-5 pr-lg-5 pt-lg-0">
-      <div class="row mt-3">
-        <div class="col-12 p-0">
-          <h1 class="text-bigblack text-white text-center font-lg lg-font-xxl lg-text-left">
-            SOFTWARE <span class="text-white fade-30">ENGINEER</span>
-          </h1>
-          <p class="text-white text-center lg-text-left">Driven to create an efficient, scalable, and user-friendly digital solutions with {{ yearsFrom2019 }} years of experience. I specialize in Angular, Laravel, ASP.NET in building complex ideas into seamless web applications</p>
-        </div>
-      </div>
-      <div class="row mt-2">
+    <section class="col-lg-8 pl-lg-5 pr-lg-5 pt-lg-0">
+      <article>
+        <h2 class="text-bigblack text-white text-center font-lg lg-font-xxl lg-text-left">
+          SOFTWARE <span class="text-white fade-30">ENGINEER</span>
+        </h2>
+        <p class="text-white text-center lg-text-left">Driven to create efficient, scalable, and user-friendly digital solutions with {{ yearsFrom2019 }} years of experience. I specialize in Angular, Laravel, and ASP.NET to build complex ideas into seamless web applications.</p>
+      </article>
+
+      <section class="row mt-2" aria-label="Experience Stats">
         <div class="col-12 p-0 col-md-4 text-center">
-          <h1 class="text-bigblack text-white font-lg m-0">
-            {{ yearsFrom2019 }}
-          </h1>
+          <h2 class="text-bigblack text-white font-lg m-0">{{ yearsFrom2019 }}</h2>
           <span class="text-white font-md fade-30 text-extrabold">YEARS OF EXPERIENCE</span>
         </div>
         <div class="col-12 p-0 col-md-4 text-center">
-          <h1 class="text-bigblack text-white font-lg m-0">
-            {{ 3 }}
-          </h1>
+          <h2 class="text-bigblack text-white font-lg m-0">{{ 3 }}</h2>
           <span class="text-white font-md fade-30 text-extrabold">PROJECTS</span>
         </div>
         <div class="col-12 p-0 col-md-4 text-center">
-          <h1 class="text-bigblack text-white font-lg m-0">
-            {{ 5 }}
-          </h1>
+          <h2 class="text-bigblack text-white font-lg m-0">{{ 5 }}</h2>
           <span class="text-white font-md fade-30 text-extrabold">CLIENTS</span>
         </div>
-      </div>
+      </section>
 
-      <div class="row">
-        <div class="fading">
-          <div class="image-container" #imageContainer>
-            <div class="image-wrapper" *ngFor="let img of images">
-              <img [src]="img" [alt]="img" width="80" height="80">
+      <section class="row mt-5" aria-label="Recent Projects">
+        <h2 class="text-bigblack text-white text-center font-lg">RECENT <span class="text-white fade-30">PROJECTS</span></h2>
+        <div class="row" *ngFor="let project of projects">
+          <article class="col-12 text-white">
+            <div class="project p-2 rounded">
+              <img [src]="project.image" width="100%" height="100%" alt="{{ project.title1 }} Project Image" fetchpriority="high">
+              <h3 class="d-flex align-items-center font-md text-bigblack stack-container justify-content-center">
+                <span class="color-primary-1">{{ project.title1 }}</span> &nbsp;
+                <span class="color-primary-2">{{ project.title2 }}</span>
+              </h3>
+              <p class="p-2">{{ project.description }}</p>
             </div>
-          </div>
-          <div class="fading-overlay"></div>
+          </article>
         </div>
-      </div>
+      </section>
 
-      <div class="row mt-5">
-        <div class="col-12 p-0">
-          <h1 class="text-bigblack text-white text-center font-lg">
-            RECENT <span class="text-white fade-30">PROJECTS</span>
-          </h1>
-        </div>
-      </div>
-
-      <div class="row" *ngFor="let project of projects">
-        <div class="col-12 text-white">
-          <div class="project p-2 rounded">
-            <img [src]="project.image" width="100%" height="100%" alt="Project-image" fetchpriority="high">
-            <h2 class="d-flex align-items-center font-md text-bigblack stack-container justify-content-center">
-              <span class="color-primary-1">{{ project.title1 }}</span> &nbsp;
-              <span class="color-primary-2">{{ project.title2 }}</span>
-            </h2>
-            <div class="p-2">{{ project.description }}</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row mt-5">
-        <div class="col-12 p-0">
-          <h1 class="text-bigblack text-white text-center font-lg">
-            {{ yearsFrom2019 + ' YEARS ' }} <span class="text-white fade-30">OF EXPERIENCE</span>
-          </h1>
-        </div>
-      </div>
-      <div class="row mt-5">
-        <div class="col-12 p-0 company">
-          <div class="row" *ngFor="let company of companies">
-            <div class="col-12 text-white">
-              <p class="font-sm font-weight-bold">{{ company.name + ' - ' + company.position }}</p>
-              <p class="fade-80">
-                {{ company.job }}
-              </p>
-              <div class="fade-80">Key Contributions</div>
-              <p class="fade-80 mb-1 pl-3" [ngClass]="{'mb-3': i === company.contributions.length - 1}" *ngFor="let contribution of company.contributions; let i = index">- {{contribution}}</p>
-              <p class="fade-80">{{company.from + ' - ' + company.to}}</p>
-              <p class="fade-80"><span class="font-weight-bold">Tools: </span> {{ getTools(company.stack) }}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-5">
-        <div class="col-12 p-0">
-          <h1 class="text-bigblack text-white text-center font-lg ">
-            TECHNICAL <span class="text-white fade-30">TOOLS</span>
-          </h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="d-flex flex-wrap align-items-center justify-content-center">
-            <div class="col-6 col-md-4 col-lg-4 d-flex flex-wrap align-items-center justify-content-center" *ngFor="let img of images">
-              <img [src]="img" alt="Scrolling Image" height="80" width="80" class="m-lg-2 mb-3 mb-lg-2">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-5">
-        <div class="col-12 p-0">
-          <h1 class="text-bigblack text-white text-center font-lg">
-            LET'S WORK <span class="text-white fade-30">YOUR IDEA</span>
-          </h1>
-        </div>
-      </div>
-      <div class="contact-form-container shadow rounded">
+      <section class="contact-form-container shadow rounded" aria-labelledby="contact-form">
+        <h2 id="contact-form" class="text-bigblack text-white text-center font-lg">LET'S WORK <span class="text-white fade-30">YOUR IDEA</span></h2>
         <form [formGroup]="contactForm" (ngSubmit)="submitForm()">
           <div class="form-group">
             <label for="name" class="text-white">Name</label>
-            <input id="name" class="form-control" formControlName="name" placeholder="Enter your name">
+            <input id="name" class="form-control" formControlName="name" placeholder="Enter your name" required>
             <small *ngIf="isSubmitted && contactForm.controls['name'].errors" class="text-danger">Name is required</small>
           </div>
 
           <div class="form-group">
             <label for="email" class="text-white">Email</label>
-            <input id="email" class="form-control" formControlName="email" placeholder="Enter your email">
+            <input id="email" class="form-control" formControlName="email" placeholder="Enter your email" required>
             <small *ngIf="isSubmitted && contactForm.controls['email'].errors" class="text-danger">Valid email is required</small>
           </div>
 
           <div class="form-group">
             <label for="message" class="text-white">Message</label>
-            <textarea id="message" class="form-control" formControlName="message" rows="4" placeholder="Enter your message"></textarea>
+            <textarea id="message" class="form-control" formControlName="message" rows="4" placeholder="Enter your message" required></textarea>
             <small *ngIf="isSubmitted && contactForm.controls['message'].errors" class="text-danger">Message is required</small>
           </div>
 
           <button class="btn btn-primary mt-3 w-100" type="submit">Send Message</button>
         </form>
-      </div>
-    </div>
+      </section>
+    </section>
   </div>
 </div>
